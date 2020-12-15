@@ -21,6 +21,17 @@ class TreeNode:
         self.left = left
         self.right = right
 
-# def inorder_traversal(root):
-#     # Your code here
-# # 
+def inorder_traversal(root):
+    # Your code here
+    result = []
+    recurse(root, result)
+    return result 
+
+def recurse(root, result):
+    if root is None:
+        return 
+
+    recurse(root.left, result)
+    result.append(root.val)
+    recurse(root.right, result)
+
